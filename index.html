@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+    
+<h1 id="header">Hello World</h1>
+
+<p>
+<button onclick="toiminnot()" id="my-button">Nappi</button>
+
+<ul id="list">
+</ul>
+<button id="add-data" onClick="addLi()">Add Li</button>
+<br>
+<textarea id="teksti"></textarea>
+</p>
+
+<script>
+function addLi() {
+    var ul = document.getElementById("list");
+    var li = document.createElement("li");
+    var teksti = document.getElementById("teksti").value;
+    if (teksti != "") {
+        li.appendChild(document.createTextNode(teksti));
+        ul.appendChild(li);
+    } else {
+        console.log("Given text was an empty string");
+        li.appendChild(document.createTextNode("Some text"));
+        ul.appendChild(li);
+    }
+}
+function toiminnot() {
+    console.log("Hello World");
+    document.getElementById("header").innerHTML = "Moi maailma";
+}
+</script>
+
+</body>
+</html>
